@@ -1,0 +1,22 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/address
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: country
+      value: Spain
+      description: ""
+      disabled: false
+    - type: text
+      key: zipcode
+      value: "26004"
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: angela@gmail.com
+      description: ""
+      disabled: false
+order: 3000

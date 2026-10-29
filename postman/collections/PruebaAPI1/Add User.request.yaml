@@ -1,0 +1,27 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/register
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: Ana
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: ana@gmail.com
+      description: ""
+      disabled: false
+    - type: text
+      key: password
+      value: "12345678"
+      description: ""
+      disabled: false
+    - type: text
+      key: c_password
+      value: "12345678"
+      description: ""
+      disabled: false
+order: 1000
