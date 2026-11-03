@@ -51,4 +51,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function events()
+    {
+        return $this->belongsToMany('App\Models\Event')->withPivot('note')->withTimestamps();
+}
 }

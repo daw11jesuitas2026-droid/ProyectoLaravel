@@ -6,12 +6,12 @@ body:
   content:
     - type: text
       key: name
-      value: Ana
+      value: pepe
       description: ""
       disabled: false
     - type: text
       key: email
-      value: ana@gmail.com
+      value: pepe@gmail.com
       description: ""
       disabled: false
     - type: text

@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Address;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Event;
+
 
 class UserController extends Controller
 {
@@ -36,5 +38,20 @@ class UserController extends Controller
     {
         return response()->json(['message'=>'','data'=>$user->address],200);
 }
+    public function listEvents(User $user)
+    {
+        return response()->json(['message' => '', 'data' => $user->events], 200);
+    }
+    public function bookEvent(Request $request, User $user, Event $event)
+    {
+        $note = '';
+        if($request->note){
+            $note = $request->note;
+        }
+            if($user->events()->save($event, array('note' => $note))){
+            return response()->json(['message'=>'User Event Created','data'=>$event],200);
+        }
+        return response()->json(['message'=>'Error','data'=>null],400);
+    }
 
 }
